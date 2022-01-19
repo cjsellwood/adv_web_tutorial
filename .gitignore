@@ -1,2 +1,5 @@
 /react_robots/node_modules
 /react_robots/build
+
+/code_splitting/node_modules
+/code_splitting/build
