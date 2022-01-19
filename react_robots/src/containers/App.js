@@ -5,34 +5,38 @@ import SearchBox from "../components/SearchBox";
 import Scroll from "../components/Scroll";
 import ErrorBoundary from "../components/ErrorBoundary";
 import "./App.css";
-import { setSearchField } from "../actions";
+import { requestRobots, setSearchField } from "../actions";
 
 const mapStateToProps = (state) => {
   return {
-    searchField: state.searchField,
+    searchField: state.searchRobots.searchField,
+    robots: state.requestRobots.robots,
+    isPending: state.requestRobots.isPending,
+    error: state.requestRobots.error,
   };
 };
 
 const mapDispatchToProps = (dispatch) => ({
   onSearchChange: (e) => dispatch(setSearchField(e.target.value)),
+  onRequestRobots: () => dispatch(requestRobots()),
 });
 
-const App = ({searchField, onSearchChange}) => {
-  const [robots, setRobots] = useState([]);
-
-  useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/users").then((res) =>
-      res.json().then((data) => {
-        setRobots(data);
-      })
-    );
-  }, []);
-
+const App = ({
+  searchField,
+  onSearchChange,
+  robots,
+  isPending,
+  onRequestRobots,
+}) => {
   const filteredRobots = robots.filter((robot) => {
     return robot.name.toLowerCase().includes(searchField.toLowerCase());
   });
 
-  return !robots.length ? (
+  useEffect(() => {
+    onRequestRobots();
+  }, [onRequestRobots]);
+
+  return isPending ? (
     <h1>Loading</h1>
   ) : (
     <div className="tc">
