@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/senior_web_tutorial/static/css/main.5238d126.css",
-    "main.js": "/senior_web_tutorial/static/js/main.d622d0b7.js",
+    "main.css": "/senior_web_tutorial/static/css/main.72ecb0c7.css",
+    "main.js": "/senior_web_tutorial/static/js/main.f213bfba.js",
     "service-worker.js": "/senior_web_tutorial/service-worker.js",
     "static/media/SEGA.woff": "/senior_web_tutorial/static/media/SEGA.47b4bfa94ef243af4a5b.woff",
     "index.html": "/senior_web_tutorial/index.html",
-    "main.5238d126.css.map": "/senior_web_tutorial/static/css/main.5238d126.css.map",
-    "main.d622d0b7.js.map": "/senior_web_tutorial/static/js/main.d622d0b7.js.map"
+    "main.72ecb0c7.css.map": "/senior_web_tutorial/static/css/main.72ecb0c7.css.map",
+    "main.f213bfba.js.map": "/senior_web_tutorial/static/js/main.f213bfba.js.map"
   },
   "entrypoints": [
-    "static/css/main.5238d126.css",
-    "static/js/main.d622d0b7.js"
+    "static/css/main.72ecb0c7.css",
+    "static/js/main.f213bfba.js"
   ]
 }
