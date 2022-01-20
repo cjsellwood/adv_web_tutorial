@@ -6,6 +6,7 @@ import Scroll from "../components/Scroll";
 import ErrorBoundary from "../components/ErrorBoundary";
 import "./App.css";
 import { requestRobots, setSearchField } from "../actions";
+import Header from "../components/Header";
 
 const mapStateToProps = (state) => {
   return {
@@ -40,7 +41,7 @@ const App = ({
     <h1>Loading</h1>
   ) : (
     <div className="tc">
-      <h1 className="f1">RoboFriends</h1>
+      <Header />
       <SearchBox searchChange={onSearchChange} />
       <Scroll>
         <ErrorBoundary>

@@ -5,15 +5,15 @@ import "tachyons";
 import App from "./containers/App";
 import { Provider } from "react-redux";
 import { applyMiddleware, combineReducers, createStore } from "redux";
-import { createLogger } from "redux-logger";
+// import { createLogger } from "redux-logger";
 import thunkMiddleware from "redux-thunk";
 import { searchRobots, requestRobots } from "./reducers";
 
-const logger = createLogger();
+// const logger = createLogger();
 const rootReducer = combineReducers({ searchRobots, requestRobots });
 const store = createStore(
   rootReducer,
-  applyMiddleware(thunkMiddleware, logger)
+  applyMiddleware(thunkMiddleware)
 );
 
 ReactDOM.render(
