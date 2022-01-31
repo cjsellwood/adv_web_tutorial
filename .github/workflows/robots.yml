@@ -5,25 +5,28 @@ jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./react_robots
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
         with:
           node-version: "14"
-        working-directory: ./react_robots
       - run: npm install
       - run: npm run build
       - run: echo "A first hello!"
   test: 
     name: Test
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./react_robots
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
         with:
           node-version: "14"
-        working-directory: ./react_robots
-      - run: cd react_robots
       - run: npm install
       - run: npm run build
       - run: echo "testing stuff"
