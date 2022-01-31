@@ -1,5 +1,6 @@
 name: React robots
 on: [push]
+
 jobs:
   test:
     name: Test
