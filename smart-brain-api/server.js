@@ -4,6 +4,7 @@ const bcrypt = require("bcrypt-nodejs");
 const cors = require("cors");
 const knex = require("knex");
 const morgan = require("morgan");
+const compression = require("compression");
 
 const register = require("./controllers/register");
 const signin = require("./controllers/signin");
@@ -19,6 +20,7 @@ const db = knex({
 
 const app = express();
 
+app.use(compression());
 app.use(morgan("combined"));
 app.use(cors());
 app.use(express.json()); // latest version of exressJS now comes with Body-Parser!
