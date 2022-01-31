@@ -10,7 +10,7 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: "14"
-      - run: cd react_robots
+        working-directory: ./react_robots
       - run: npm install
       - run: npm run build
       - run: echo "A first hello!"
@@ -22,6 +22,7 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: "14"
+        working-directory: ./react_robots
       - run: cd react_robots
       - run: npm install
       - run: npm run build
